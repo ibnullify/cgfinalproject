@@ -203,6 +203,21 @@ def add_cylinder(edges, cx, cy, cz, r, h, step):
     [add_polygon(edges,upper[points+1][0],upper[points+1][1],upper[points+1][2],lower[points][0], lower[points][1],lower[points][2],lower[points+1][0],lower[points+1][1],lower[points+1][2]) for points in range(0, len(upper)-1)]
 
 
+def add_cone(edges, cx, cy, cz, r, h, step):
+    upper = list()
+    lower = list()
+    add_circle(lower, cx, cy, cz + h, r, step)
+    add_circle(upper, cx, cy, cz, r, step)
+
+    #draw cone
+    [add_polygon(edges, cx, cy, cz+h,upper[points][0],upper[points][1],upper[points][2],upper[points+1][0],upper[points+1][1],upper[points+1][2]) for points in range(0, len(upper)-1)] 
+    
+    #draw base
+    [add_polygon(edges,upper[points][0],upper[points][1],upper[points][2],cx, cy, cz,upper[points+1][0],upper[points+1][1],upper[points+1][2]) for points in range(0, len(upper)-1)]
+        
+
+
+
 
 def add_torus( edges, cx, cy, cz, r0, r1, step ):
     points = generate_torus(cx, cy, cz, r0, r1, step)
