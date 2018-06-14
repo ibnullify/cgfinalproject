@@ -210,6 +210,11 @@ def run(filename):
                 matrix_mult( stack[-1], tmp )
                 draw_polygons(tmp, screen, zbuffer, view, ambient, light, areflect, dreflect, sreflect)
                 tmp = []
+            elif c == 'crystal':
+                add_crystal(tmp, args[0], args[1], args[2], args[3], args[4])
+                matrix_mult( stack[-1], tmp )
+                draw_polygons(tmp, screen, zbuffer, view, ambient, light, areflect, dreflect, sreflect)
+                tmp = []
             elif c == 'cylinder':
                 add_cylinder(tmp,
                           args[0], args[1], args[2], args[3], args[4], step_3d)

@@ -179,13 +179,23 @@ def generate_sphere( cx, cy, cz, r, step ):
             #print 'rotation: %d\tcircle%d'%(rotation, circle)
     return points
 
-def add_square_pyramid(polygons, cx, cy, cz, h, w):
-    add_polygon( polygons, cx, cy, cz, cx, cy ,(cz - w), cx + (w / 2), (cy + h), cz - (w / 2))
-    add_polygon( polygons, cx, cy, (cz - w), (cx + w), cy, (cz - w), cx + (w / 2), (cy + h), cz - (w / 2))
-    add_polygon( polygons, (cx + w), cy, (cz - w), (cx + w), cy, cz, cx + (w / 2), (cy + h), cz - (w / 2))
-    add_polygon( polygons, (cx + w), cy, cz, cx, cy, cz, cx + (w / 2), (cy + h), cz - (w / 2))
-    add_polygon( polygons, cx, cy, cz, cx, cy, (cz - w), (cx + w), cy, (cz - w))
-    add_polygon( polygons, cx, cy, cz, (cx + w), cy ,cz ,(cx + w), cy, (cz - w))
+
+
+def add_square_pyramid(edges, cx, cy, cz, h, w):
+    add_polygon(edges, cx, cy, cz, cx, cy ,(cz - w), cx + (w / 2), (cy + h), cz - (w / 2))
+    add_polygon(edges, cx, cy, (cz - w), (cx + w), cy, (cz - w), cx + (w / 2), (cy + h), cz - (w / 2))
+    add_polygon(edges, (cx + w), cy, (cz - w), (cx + w), cy, cz, cx + (w / 2), (cy + h), cz - (w / 2))
+    add_polygon(edges, (cx + w), cy, cz, cx, cy, cz, cx + (w / 2), (cy + h), cz - (w / 2))
+    add_polygon(edges, cx, cy, cz, cx, cy, (cz - w), (cx + w), cy, (cz - w))
+    add_polygon(edges, cx, cy, cz, (cx + w), cy ,cz ,(cx + w), cy, (cz - w))
+
+
+def add_crystal(edges, cx, cy, cz, h, w):
+    add_square_pyramid(edges, cx, cy, cz, -h, w)
+    add_square_pyramid(edges, cx, cy, cz, h, w)
+
+    
+
 
 
 def add_cylinder(edges, cx, cy, cz, r, h, step):
