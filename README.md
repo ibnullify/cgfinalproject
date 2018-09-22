@@ -1,4 +1,4 @@
-# POLY--  oh no looks like the rest of our title is GONE! 
+## POLY--  oh no looks like the rest of our title is GONE! 
 ## By Karina and Ibnul 
 
 ## Our project consists of these features:
