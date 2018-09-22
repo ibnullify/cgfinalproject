@@ -1,13 +1,13 @@
-# POLY--  oh no looks like the rest of our title is GONE! :worried:
+# POLY--  oh no looks like the rest of our title is GONE! 
 ## By Karina and Ibnul 
 
 ## Our project consists of these features:
 
-### :collision: CYLINDER :collision:
+*  CYLINDER 
 
-### :collision: CONE :collision:
+* CONE 
 
-### :collision: SQUARE PYRAMID :collision:
+* SQUARE PYRAMID
 
-### :open_mouth: :star: CRYSTAL :star: :open_mouth:
+* CRYSTAL *
 Our crystal is our very own unique shape. It is composed of two square pyramids with adjacent bases. 
